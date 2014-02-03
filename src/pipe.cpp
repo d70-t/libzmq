@@ -180,6 +180,8 @@ read_message:
 
 bool zmq::pipe_t::check_write ()
 {
+    check_read();
+
     if (unlikely (!out_active || state != active))
         return false;
 
